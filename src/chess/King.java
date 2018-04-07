@@ -1,17 +1,15 @@
 package ChessA;
 
-public class Knight extends Piece{
+public class King extends Piece{
 
-	public Knight(char pColor, String pName) {
+	public King(char pColor, String pName) {
 		super(pColor, pName);
 	}
-	
 	
 	public boolean movementController(int positionX, int positionY, int finalX, int finalY) 
 	{
 		int subX = finalX-positionX;
 		int subY = finalY-positionY;
-		
 		if(subX<0) 
 		{
 			subX=-subX;
@@ -20,18 +18,13 @@ public class Knight extends Piece{
 		{
 			subY=-subY;
 		}
- 		
-		if(subX == 2 && subY == 1) 
-		{
-			return true;
-		}
-		else if(subX == 1 && subY == 2) 
+		if(subX == 1 || subY == 1)
 		{
 			return true;
 		}
 		
 		return false;
-		
 	}
+	
 
 }
